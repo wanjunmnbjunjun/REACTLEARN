@@ -3,8 +3,22 @@ import './index.less'
 
 import {Button} from 'antd'
 
+const textHOC = (WrappedCompent) =>{
+  return class HOCCompontent extends Component {
+    render(){
+      return (
+        < >
+          <WrappedCompent/>
+          <div>这是高阶组件</div>
+        </>
+      )
+      
+    }
+  }
+}
 
-export default class App extends Component {
+@textHOC
+class App extends Component {
   render() {
     return (
       <div>
@@ -13,3 +27,4 @@ export default class App extends Component {
     )
   }
 }
+export default App

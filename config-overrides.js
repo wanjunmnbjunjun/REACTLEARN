@@ -1,6 +1,11 @@
 
 
-const {override,addLessLoader,fixBabelImports} = require('customize-cra')
+const {
+  override,
+  addLessLoader,
+  fixBabelImports,
+  addDecoratorsLegacy
+} = require('customize-cra')
 const modifyVars = './lessVars.js'
 
 module.exports=override(
@@ -16,5 +21,6 @@ module.exports=override(
     // style: 'css',
     style: true,
   }),
+  addDecoratorsLegacy()
 
 )
